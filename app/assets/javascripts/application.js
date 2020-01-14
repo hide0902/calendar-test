@@ -14,3 +14,32 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/ja
+
+$(document).ready(function(){
+  $('#calendar').fullCalendar({
+    header: {
+      left: 'prev, next, today',
+      center: 'title',
+      right: 'month, agendaWeek, agendaDay, listMonth',
+    },
+    events: [
+      {
+        title: 'ミーティング',
+        timeFormat: '10:30:00',
+        start: '2020-01-22T10:30:00',
+        end: '2020-01-22T11:30:00',
+        className:'fc-event-time'
+      },
+      {
+        title: 'アポ',
+        start: '2020-01-29T10:30:00',
+        end: '2020-01-29T11:30:00',
+        className:'fc-event-time'
+      }
+    ] 
+  });
+});
